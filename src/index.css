@@ -43,3 +43,9 @@ img {
 .slick-list {
   margin: 0 -10px; /* Match this to .carousel-item padding */
 }
+
+input[type="date"] {
+  border: none;
+  background: none;
+  padding: 5px; /* Add some padding for better usability */
+}
