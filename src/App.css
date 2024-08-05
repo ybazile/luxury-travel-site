@@ -26,6 +26,12 @@
   ); /* Apply a drop shadow for React logo */
 }
 
+input[type="date"] {
+  border: none;
+  background: none;
+  padding: 5px; /* Add some padding for better usability */
+}
+
 /* Keyframes for spinning logo animation */
 @keyframes logo-spin {
   from {
