@@ -1,0 +1,2 @@
+# Wanderlust
+ This is a travel website built using React.js, Vite, and Tailwind CSS. The site features a responsive design that showcases special offers, popular destinations, and a booking section for flights, hotels, and car rentals. Leveraging modern frontend technologies, this project aims to provide users with a seamless and visually appealing experience when planning their luxury travel adventures.

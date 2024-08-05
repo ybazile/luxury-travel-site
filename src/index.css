@@ -1,0 +1,45 @@
+/* Import Tailwind base, components, and utilities styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+
+/* Reset margins and paddings for html and body */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+}
+
+/* Container class to centralize content and add padding */
+.container {
+  /* Set maximum width of the container */
+  max-width: 1280px;
+  /* Center the container horizontally */
+  margin: 0 auto;
+  /* Add horizontal padding */
+  padding: 0 1rem;
+}
+
+/* Ensure images do not overflow their containers */
+img {
+  /* Images should fit within their container's width */
+  max-width: 100%;
+  /* Maintain aspect ratio of images */
+  height: auto;
+}
+
+/* Carousel item adjustments */
+
+/* Padding for carousel items */
+.carousel-item {
+  padding: 0 10px; /* Adjust as needed */
+}
+
+/* Margin for slick-list to match carousel item padding */
+.slick-list {
+  margin: 0 -10px; /* Match this to .carousel-item padding */
+}

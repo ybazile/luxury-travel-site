@@ -1,0 +1,12 @@
+/* src/components/PopularDestinations.css */
+
+/* Styles for each carousel item */
+.carousel-item {
+    padding: 0 10px; /* Adds horizontal padding to each item in the carousel, controlling spacing between items */
+  }
+  
+  /* Styles for the list of slides in the slick carousel */
+  .slick-list {
+    margin: 0 -10px; /* Sets negative margin on the left and right to offset the padding of the carousel items */
+  }
+  
