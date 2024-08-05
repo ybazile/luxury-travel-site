@@ -26,6 +26,12 @@
   ); /* Apply a drop shadow for React logo */
 }
 
+input[type="date"] {
+  background-color: transparent; /* Ensure background is not greyed out */
+  color: #a4937e; /* Ensure text color matches your theme */
+}
+
+
 /* Keyframes for spinning logo animation */
 @keyframes logo-spin {
   from {
