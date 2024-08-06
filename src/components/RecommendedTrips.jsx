@@ -1,9 +1,10 @@
 // src/components/RecommendedTrips.jsx
 
-// Importing necessary modules and hooks
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { FaCalendarAlt } from 'react-icons/fa';
 
-// Array of recommended trips with their details
 const trips = [
   {
     name: "Luxury Safari",
@@ -55,42 +56,44 @@ const trips = [
   },
 ];
 
-// Main component for displaying recommended trips
 const RecommendedTrips = () => {
-  // State for storing start and end dates
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
-  // Function to calculate the total cost based on selected dates
   const calculateTotal = (costPerNight) => {
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      const totalNights = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calculate total nights
-      return (costPerNight * totalNights).toLocaleString(); // Calculate and format total cost
+      const totalNights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+      return (costPerNight * totalNights).toLocaleString();
     }
-    return null; // Return null if dates are not selected
+    return null;
   };
 
   return (
-    // Section for recommended trips
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
           <h2 className="text-3xl font-bold mb-4 md:mb-0">Recommended Trips</h2>
           <div className="flex items-center space-x-2">
-            <input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className="border-none rounded-md focus:ring-0"
-            />
-            <input
-              type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className="border-none rounded-md focus:ring-0"
-            />
+            <div className="flex items-center border rounded-lg p-2">
+              <FaCalendarAlt className="text-earth-dark mr-2" />
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                placeholderText="Start Date"
+                className="w-full p-1 focus:outline-none"
+              />
+            </div>
+            <div className="flex items-center border rounded-lg p-2">
+              <FaCalendarAlt className="text-earth-dark mr-2" />
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                placeholderText="End Date"
+                className="w-full p-1 focus:outline-none"
+              />
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
