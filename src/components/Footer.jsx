@@ -22,10 +22,10 @@ const Footer = () => {
           <div className="flex justify-center space-x-4">
             <img src="/images/icons8-visa-96.png" alt="Visa" className="h-8" />
             <img src="/images/icons8-mastercard-96.png" alt="MasterCard" className="h-8" />
-            <img src="images/icons8-american-express-96.png" alt="American Express" className="h-8" />
-            <img src="images/icons8-discover-card-96.png" alt="Discover" className="h-8" />
-            <img src="images/icons8-apple-pay-96.png" alt="Applt Pay" className="h-8" />
-            <img src="images/icons8-google-pay-96.png" alt="Google Pay" className="h-8" />
+            <img src="/images/icons8-american-express-96.png" alt="American Express" className="h-8" />
+            <img src="/images/icons8-discover-card-96.png" alt="Discover" className="h-8" />
+            <img src="/images/icons8-apple-pay-96.png" alt="Apple Pay" className="h-8" />
+            <img src="/images/icons8-google-pay-96.png" alt="Google Pay" className="h-8" />
           </div>
         </div>
 
