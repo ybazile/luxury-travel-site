@@ -5,37 +5,44 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { FaPlane, FaHotel, FaCar, FaMapMarkerAlt, FaCalendarAlt, FaUser } from 'react-icons/fa';
 
 const BookingSection = () => {
+  // State for the active tab, start date, and end date
   const [activeTab, setActiveTab] = useState('flights');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  // Handler to change the active tab
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
   return (
     <section className="bg-white shadow-md rounded-lg p-2 mx-auto -mt-12 relative z-10 max-w-screen-sm">
+      {/* Tab buttons */}
       <div className="flex justify-center mb-2">
         <button
-          className={`px-3 py-1 ${activeTab === 'flights' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'} rounded-l-lg`}
+          className={`px-3 py-1 flex items-center ${activeTab === 'flights' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'} rounded-l-lg`}
           onClick={() => handleTabChange('flights')}
         >
+          <FaPlane className="mr-1" />
           Flights
         </button>
         <button
-          className={`px-3 py-1 ${activeTab === 'hotels' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'}`}
+          className={`px-3 py-1 flex items-center ${activeTab === 'hotels' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'}`}
           onClick={() => handleTabChange('hotels')}
         >
+          <FaHotel className="mr-1" />
           Hotels
         </button>
         <button
-          className={`px-3 py-1 ${activeTab === 'cars' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'} rounded-r-lg`}
+          className={`px-3 py-1 flex items-center ${activeTab === 'cars' ? 'bg-earth-dark text-white' : 'bg-earth-light text-earth-dark'} rounded-r-lg`}
           onClick={() => handleTabChange('cars')}
         >
+          <FaCar className="mr-1" />
           Cars
         </button>
       </div>
 
+      {/* Flights tab content */}
       {activeTab === 'flights' && (
         <div className="space-y-2">
           <div className="flex items-center border rounded-lg p-2">
@@ -76,6 +83,7 @@ const BookingSection = () => {
         </div>
       )}
 
+      {/* Hotels tab content */}
       {activeTab === 'hotels' && (
         <div className="space-y-2">
           <div className="flex items-center border rounded-lg p-2">
@@ -112,6 +120,7 @@ const BookingSection = () => {
         </div>
       )}
 
+      {/* Cars tab content */}
       {activeTab === 'cars' && (
         <div className="space-y-2">
           <div className="flex items-center border rounded-lg p-2">
