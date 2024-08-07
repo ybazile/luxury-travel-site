@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaCalendarAlt } from 'react-icons/fa';
 
+// Array of recommended trip data
 const trips = [
   {
     name: "Luxury Safari",
@@ -57,15 +58,16 @@ const trips = [
 ];
 
 const RecommendedTrips = () => {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(null); // State for start date
+  const [endDate, setEndDate] = useState(null); // State for end date
 
+  // Function to calculate the total cost based on selected dates and cost per night
   const calculateTotal = (costPerNight) => {
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      const totalNights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
-      return (costPerNight * totalNights).toLocaleString();
+      const totalNights = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calculate number of nights
+      return (costPerNight * totalNights).toLocaleString(); // Return total cost formatted as a string
     }
     return null;
   };
@@ -80,7 +82,7 @@ const RecommendedTrips = () => {
               <FaCalendarAlt className="text-earth-dark mr-2" />
               <DatePicker
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date) => setStartDate(date)} // Update start date state
                 placeholderText="Start Date"
                 className="w-full p-1 focus:outline-none"
               />
@@ -89,7 +91,7 @@ const RecommendedTrips = () => {
               <FaCalendarAlt className="text-earth-dark mr-2" />
               <DatePicker
                 selected={endDate}
-                onChange={(date) => setEndDate(date)}
+                onChange={(date) => setEndDate(date)} // Update end date state
                 placeholderText="End Date"
                 className="w-full p-1 focus:outline-none"
               />
@@ -97,6 +99,7 @@ const RecommendedTrips = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Map over trips array to display each trip */}
           {trips.map((trip, index) => (
             <div key={index} className="bg-gray-100 shadow-md rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
               <img src={trip.image} alt={trip.name} className="w-full h-48 object-cover" />
@@ -110,6 +113,7 @@ const RecommendedTrips = () => {
                 <p className="text-lg font-bold mt-2">
                   {trip.costPerNight.toLocaleString('en-US', { style: 'currency', currency: 'USD' })} per night
                 </p>
+                {/* Display total cost if both dates are selected */}
                 {calculateTotal(trip.costPerNight) !== null && (
                   <>
                     <p className="text-lg font-bold">
