@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaCcVisa, FaCcMastercard, FaCcAmex, FaCcDiscover, FaCcApplePay, FaGooglePay } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -19,27 +19,27 @@ const Footer = () => {
 
         <div className="mt-6">
           <h4 className="text-lg font-bold mb-2">Payments Accepted</h4>
-          <div className="flex justify-center space-x-4">
-            <img src="/images/icons8-visa-96.png" alt="Visa" className="h-8" />
-            <img src="/images/icons8-mastercard-96.png" alt="MasterCard" className="h-8" />
-            <img src="/images/icons8-american-express-96.png" alt="American Express" className="h-8" />
-            <img src="/images/icons8-discover-card-96.png" alt="Discover" className="h-8" />
-            <img src="/images/icons8-apple-pay-96.png" alt="Apple Pay" className="h-8" />
-            <img src="/images/icons8-google-pay-96.png" alt="Google Pay" className="h-8" />
+          <div className="flex justify-center space-x-4 text-3xl">
+            <FaCcVisa aria-label="Visa" />
+            <FaCcMastercard aria-label="MasterCard" />
+            <FaCcAmex aria-label="American Express" />
+            <FaCcDiscover aria-label="Discover" />
+            <FaCcApplePay aria-label="Apple Pay" />
+            <FaGooglePay aria-label="Google Pay" />
           </div>
         </div>
 
         <div className="mt-6">
           <h4 className="text-lg font-bold mb-2">Follow Us</h4>
-          <div className="flex justify-center space-x-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-earth-accent">
-              <FaFacebook />
+          <div className="flex justify-center space-x-4 text-3xl">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth-accent">
+              <FaFacebook aria-label="Facebook" />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-earth-accent">
-              <FaTwitter />
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth-accent">
+              <FaTwitter aria-label="Twitter" />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-earth-accent">
-              <FaInstagram />
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-earth-accent">
+              <FaInstagram aria-label="Instagram" />
             </a>
           </div>
         </div>
